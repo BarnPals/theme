@@ -1,0 +1,39 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "description": "The main repo for all Barn Pals standardized styling.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint:fix": "eslint --ignore-path .gitignore --fix",
+    "lint:fix-all": "yarn lint:fix -- .",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^1.1.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7"
+  }
+}
